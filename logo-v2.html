@@ -41,13 +41,11 @@
         background-color: #111111;
       }
 
-      .highlight {
-        font-style: italic;
-        color: var(--primary);
-      }
-
-      em {
-        color: var(--warning);
+      h1 {
+        color: color-mix(in srgb, var(--primary-content), transparent 30%);
+        font-size: 3rem;
+        padding: 0 10px 0 20px;
+        margin-top: 120px;
       }
 
       p {
@@ -57,11 +55,13 @@
         margin-bottom: 100px;
       }
 
-      h1 {
-        color: color-mix(in srgb, var(--primary-content), transparent 30%);
-        font-size: 3rem;
-        padding: 0 10px 0 20px;
-        margin-top: 120px;
+      .highlight {
+        font-style: italic;
+        color: var(--primary);
+      }
+
+      em {
+        color: var(--warning);
       }
 
       .bars-wrapper {
