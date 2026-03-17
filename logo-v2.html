@@ -42,6 +42,7 @@
       }
 
       .highlight {
+        font-style: italic;
         color: var(--primary);
       }
 
@@ -52,12 +53,15 @@
       p {
         color: color-mix(in srgb, var(--primary-content), transparent 30%);
         font-size: 1.2rem;
+        padding: 0 10px 0 20px;
+        margin-bottom: 100px;
       }
 
       h1 {
-        color: var(--primary-content);
+        color: color-mix(in srgb, var(--primary-content), transparent 30%);
         font-size: 3rem;
-        padding: 0 10px 0 10px;
+        padding: 0 10px 0 20px;
+        margin-top: 120px;
       }
 
       .bars-wrapper {
@@ -139,8 +143,13 @@
         <div class="bar" style="--my-idx: 11"></div>
       </div>
     </div>
-    <h1>JesCiTy</h1>
-    <p>I am a whole city &mdash; <em>In flight.</em> Pheonix <span class="highlight">Risen.</span></p>
+    <div>
+      <h1>JesCiTy</h1>
+      <p>
+        I am a whole city &mdash; <em>In flight.</em> &mdash;
+        <span class="highlight">A Pheonix</span> <em>Risen.</em>
+      </p>
+    </div>
     <script src="" async defer></script>
   </body>
 </html>
