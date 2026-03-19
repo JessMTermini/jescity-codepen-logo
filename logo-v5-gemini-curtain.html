@@ -1,0 +1,121 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>Phoenix Cloaking Shield</title>
+    <style>
+      :root {
+        --primary: #c4005a;
+        --bg-color: #111111;
+        /* 1px pink + 25px cloaking bar = 26px total */
+        --feather-width: 1px;
+        --cloak-width: 25px;
+        --total-width: calc(var(--feather-width) + var(--cloak-width));
+      }
+
+      body {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-height: 100vh;
+        background-color: var(--bg-color);
+        margin: 0;
+      }
+
+      #logo-container {
+        display: grid;
+        grid-template-areas: "stack";
+        align-items: center;
+        justify-items: center;
+      }
+
+      #logo-container > * {
+        grid-area: stack;
+      }
+
+      /* LAYER 1: THE LOGO (Bottom) */
+      .logo-name {
+        z-index: 0;
+        margin-top: 50px; /* Position it where the "curtain" hits it */
+      }
+
+      h1 {
+        color: white;
+        font-size: 5rem;
+        margin: 0;
+        letter-spacing: 2px;
+        z-index: 0;
+      }
+
+      /* LAYER 2: THE CLOAKING WINGS (Top) */
+      .pheonix-slices-wrapper {
+        display: flex;
+        gap: 0; /* No gaps! The "gap" is built into the slice background */
+        align-items: flex-end; /* Grows UP from the bottom */
+        height: 300px;
+        
+      }
+
+      .pheonix-slice {
+        width: var(--total-width);
+        /* THE MAGIC GRADIENT: 1px Pink, then the rest is Background Color */
+        z-index:4;
+        background: linear-gradient(
+          to right, 
+          var(--primary) 0, 
+          var(--primary) var(--feather-width), 
+          var(--bg-color) var(--feather-width)
+        );
+        
+        --distance: abs(var(--pheonix) - var(--center-pheonix));
+        animation: flap-motion 2s infinite ease-in-out;
+        animation-delay: calc(var(--distance) * 0.1s);
+      }
+
+      @keyframes flap-motion {
+        0%, 100% {
+          height: 200px; /* TALL: The bg-color part of the slice hides the logo */
+        }
+        50% {
+          height: 20px; /* SHORT: The logo is revealed below the slices */
+        }
+      }
+
+      /* TAGLINE (Foreground) */
+      .logo-tagline {
+        z-index: 3;
+        margin-top: 250px;
+        color: rgba(255, 255, 255, 0.5);
+      }
+    </style>
+  </head>
+  <body>
+    <div id="logo-container">
+      
+      <div class="logo-name">
+        <h1>JesCiTy</h1>
+      </div>
+
+      <div class="pheonix-wave-container">
+        <div class="pheonix-slices-wrapper" style="--center-pheonix: 6">
+          <div class="pheonix-slice" style="--pheonix: 1"></div>
+          <div class="pheonix-slice" style="--pheonix: 2"></div>
+          <div class="pheonix-slice" style="--pheonix: 3"></div>
+          <div class="pheonix-slice" style="--pheonix: 4"></div>
+          <div class="pheonix-slice" style="--pheonix: 5"></div>
+          <div class="pheonix-slice" style="--pheonix: 6"></div>
+          <div class="pheonix-slice" style="--pheonix: 7"></div>
+          <div class="pheonix-slice" style="--pheonix: 8"></div>
+          <div class="pheonix-slice" style="--pheonix: 9"></div>
+          <div class="pheonix-slice" style="--pheonix: 10"></div>
+          <div class="pheonix-slice" style="--pheonix: 11"></div>
+        </div>
+      </div>
+
+      <div class="logo-tagline">
+        <p>A Phoenix Risen.</p>
+      </div>
+
+    </div>
+  </body>
+</html>
