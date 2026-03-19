@@ -1,0 +1,189 @@
+<!doctype html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]>      <html class="no-js"> <!--<![endif]-->
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>Jescity Codepen Logo</title>
+    <meta name="description" content="" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="" />
+    <style>
+      /* daisyUI 5 Custom Theme Syntax */
+      /* 1. The Variable Bank (VS Code will show swatches here!) */
+      :root {
+        --primary: #c4005a;
+        --primary-content: #ffffff;
+        --secondary: #00a4f2;
+        --secondary-content: #ffffff;
+        --accent: #00b6d9;
+        --accent-content: #ffffff;
+        --neutral: #51515c;
+        --neutral-content: #cdd0d3;
+        --info: #71d1fe;
+        --info-content: #ffffff;
+        --success: #99e600;
+        --success-content: #ffffff;
+        --warning: #fdcf2b;
+        --warning-content: #ffffff;
+        --error: #f82834;
+        --error-content: #ffffff;
+      }
+      /* Basic Setup */
+      body {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-height: 100vh;
+        background-color: #111111;
+      }
+
+      h1 {
+        color: color-mix(in srgb, var(--primary-content), transparent 30%);
+        font-size: 3rem;
+        padding: 0 10px 0 20px;
+        margin-top: 120px;
+      }
+
+      p {
+        color: color-mix(in srgb, var(--primary-content), transparent 30%);
+        font-size: 1.2rem;
+        padding: 0 10px 0 20px;
+        margin-bottom: 100px;
+      }
+
+      .highlight {
+        font-style: italic;
+        color: var(--primary);
+      }
+
+      em {
+        color: var(--warning);
+      }
+
+      #logo-container {
+        display: grid;
+        align-items: center; /* Vertically centers items in their cells */
+        gap: 1em; /* Uses your new scaling unit! */
+      }
+
+      /* Layout Option A: Phoenix on left, Name/Tagline stacked on right */
+      .layout-horizontal {
+        grid-template-areas:
+          "anim name"
+          "anim tagline";
+      }
+
+      /* Layout Option B: Phoenix and Name horizontal, Tagline long underneath */
+      .layout-wide-tag {
+        grid-template-areas:
+          "anim name"
+          "tagline tagline";
+      }
+
+      /* Assign the blocks to the areas defined above */
+      .pheonix-wave-container {
+        grid-area: anim;
+      }
+      .logo-name {
+        grid-area: name;
+      }
+      .tagline {
+        grid-area: tagline;
+      }
+
+      .pheonix-slices-wrapper {
+        display: flex;
+        gap: 9%;
+        align-items: flex-end;
+        height: 150px;
+      }
+
+      /* The Bar Styling */
+      .pheonix-slice {
+        width: 20px;
+        height: 40px; /* Base height */
+        /* background: #4ecca3; // original */
+        background: var(--primary);
+        border-radius: 4px;
+
+        /* --- THE CORE LOGIC --- */
+
+        /* 1. Calculate absolute distance from the center index.
+     Idx 5 and 7 will both have a distance of '1'.
+     Idx 1 and 11 will both have a distance of '5'. */
+        --distance: abs(var(--pheonix) - var(--center-pheonix));
+
+        /* 2. Use that distance to create staggered delays.
+     Further items wait longer to start. */
+        animation-delay: calc(var(--distance) * 0.1s);
+
+        /* Apply the animation */
+        animation-name: wave-motion;
+        animation-duration: 1.5s;
+        animation-iteration-count: infinite;
+        animation-timing-function: ease-in-out;
+      }
+
+      /* Just to highlight the center point visually */
+      /* background: #e84545; // red */
+      .center-marker {
+        background: var(--warning);
+      }
+
+      /* The Animation Keyframes */
+      @keyframes wave-motion {
+        0%,
+        100% {
+          height: 100%;
+          opacity: 0.5;
+        }
+        50% {
+          /* The peak of the wave */
+          height: 10px;
+          opacity: 1;
+          filter: brightness(1.5);
+          box-shadow: 0 0 20px var(--color);
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <!--[if lt IE 7]>
+      <p class="browsehappy">
+        You are using an <strong>outdated</strong> browser. Please
+        <a href="#">upgrade your browser</a> to improve your experience.
+      </p>
+    <![endif]-->
+    <div id="logo-container" class="layout-wide-tag">
+      <div class="pheonix-wave-container">
+        <div class="pheonix-slices-wrapper" style="--center-pheonix: 6">
+          <div class="pheonix-slice" style="--pheonix: 1"></div>
+          <div class="pheonix-slice" style="--pheonix: 2"></div>
+          <div class="pheonix-slice" style="--pheonix: 3"></div>
+          <div class="pheonix-slice" style="--pheonix: 4"></div>
+          <div class="pheonix-slice" style="--pheonix: 5"></div>
+          <div class="pheonix-slice center-marker" style="--pheonix: 6"></div>
+          <div class="pheonix-slice" style="--pheonix: 7"></div>
+          <div class="pheonix-slice" style="--pheonix: 8"></div>
+          <div class="pheonix-slice" style="--pheonix: 9"></div>
+          <div class="pheonix-slice" style="--pheonix: 10"></div>
+          <div class="pheonix-slice" style="--pheonix: 11"></div>
+        </div>
+      </div>
+      <div class="logo-name">
+        <h1>JesCiTy</h1>
+      </div>
+      <div class="logo-tagline">
+        <p>
+          I am a whole city &mdash; <em>In flight.</em> &mdash;
+          <span class="highlight">A Pheonix</span> <em>Risen.</em>
+        </p>
+      </div>
+    </div>
+    <script src="" async defer></script>
+  </body>
+</html>
