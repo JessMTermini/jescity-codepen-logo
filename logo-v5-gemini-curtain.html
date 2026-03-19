@@ -35,16 +35,16 @@
 
       /* LAYER 1: THE LOGO (Bottom) */
       .logo-name {
-        z-index: 0;
+        z-index: 1;
         margin-top: 50px; /* Position it where the "curtain" hits it */
       }
 
       h1 {
         color: white;
-        font-size: 5rem;
+        font-size: 4rem;
         margin: 0;
         letter-spacing: 2px;
-        z-index: 0;
+        z-index: 1;
       }
 
       /* LAYER 2: THE CLOAKING WINGS (Top) */
@@ -59,7 +59,7 @@
       .pheonix-slice {
         width: var(--total-width);
         /* THE MAGIC GRADIENT: 1px Pink, then the rest is Background Color */
-        z-index:4;
+        z-index:2;
         background: linear-gradient(
           to right, 
           var(--primary) 0, 
