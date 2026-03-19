@@ -169,12 +169,12 @@
         /* ---------------------------------------- */
 
         /* 1. Calculate absolute distance from the center index/pheonix.
-     pheonix 5 and 7 will both have a distance of '1'.
-     pheonix 1 and 11 will both have a distance of '5'. */
+        pheonix 5 and 7 will both have a distance of '1'.
+        pheonix 1 and 11 will both have a distance of '5'. */
         --distance: abs(var(--pheonix) - var(--center-pheonix));
 
         /* 2. Use that distance to create staggered delays.
-     Further items wait longer to start. */
+        Further items wait longer to start. */
         animation-delay: calc(var(--distance) * 0.1s);
 
         /* Apply the animation */
