@@ -32,7 +32,7 @@
         --error: #f82834;
         --error-content: #ffffff;
       }
-      
+
       /* ------------------------- */
       /* --- BASIC PAGE STYING --- */
       /* ------------------------- */
@@ -46,15 +46,26 @@
       }
 
       h1 {
-        color: color-mix(in srgb, var(--primary-content), transparent 30%);
+        /* color: color-mix(in srgb, var(--primary-content), transparent 80%); */
+        /* color: rgba(0, 0, 0, 0.7); */
+        color: color-mix(in srgb, var(--primary-content), transparent 95%);
         font-size: 3rem;
-        padding: 0 10px 0 20px;
+        padding: 0 30px 20px 30px;
+        margin: 0 0 30px 0;
       }
 
       p {
         color: color-mix(in srgb, var(--primary-content), transparent 30%);
         font-size: 1.2rem;
         padding: 0 10px 0 20px;
+        margin: 0;
+      }
+
+      /* Kill default browser margins that cause the gaps */
+      h1,
+      p {
+        /* margin: 0; */
+        /*padding: 0; */
       }
 
       .highlight {
@@ -73,7 +84,7 @@
       #logo-container {
         display: grid;
         align-items: center; /* Vertically centers items in their cells */
-        gap: 1em; /* Uses your new scaling unit! */
+        gap: 0.1em; /* Uses your new scaling unit or px - This is now your ONLY control for spacing between items */
       }
 
       /* Layout Option A: Phoenix on left, Name/Tagline stacked on right */
@@ -96,6 +107,13 @@
           "anim"
           "name"
           "tagline";
+        justify-items: center; /* Centers everything horizontally in the stack */
+      }
+
+      /* Layout Option D: Stack */
+      .layout-overlap {
+        grid-template-areas: "stack";
+        justify-items: center; /* Centers everything horizontally in the stack */
       }
 
       /* Assign the blocks to the areas defined above */
@@ -104,9 +122,26 @@
       }
       .logo-name {
         grid-area: name;
+        /* align-self: center; /* Keeps the wave from stretching to match text height */
       }
       .tagline {
         grid-area: tagline;
+      }
+
+      .layout-overlap > * {
+        grid-area: stack; /* Everything sits in the same single cell */
+      }
+
+      .logo-name { /* grid-area: stack; settings */
+        z-index: 0; /* Sits on top */
+        margin-top: 80px; /* Adjust to "sink" it below the bird */
+        /* background-color: rgba(1, 1, 1, 0.3); */
+      }
+
+      .logo-tagline { /* grid-area: stack; settings */
+        z-index: 3; /* Sits on top of everything */
+        margin-top: 160px; /* Adjust to "sink" it below the bird */
+        
       }
 
       /* ------------------------ */
@@ -127,6 +162,7 @@
         /* background: #4ecca3; // original */
         background: var(--primary);
         border-radius: 4px;
+        z-index: 2;
 
         /* ---------------------------------------- */
         /* --- THE CORE WAVE LOGIC AND ANIMATION--- */
@@ -178,7 +214,7 @@
         <a href="#">upgrade your browser</a> to improve your experience.
       </p>
     <![endif]-->
-    <div id="logo-container" class="layout-vertical">
+    <div id="logo-container" class="layout-overlap">
       <div class="pheonix-wave-container">
         <div class="pheonix-slices-wrapper" style="--center-pheonix: 6">
           <div class="pheonix-slice" style="--pheonix: 1"></div>
