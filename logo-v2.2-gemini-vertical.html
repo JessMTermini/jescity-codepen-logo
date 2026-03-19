@@ -48,7 +48,7 @@
       h1 {
         /* color: color-mix(in srgb, var(--primary-content), transparent 80%); */
         /* color: rgba(0, 0, 0, 0.7); */
-        color: color-mix(in srgb, var(--primary-content), transparent 95%);
+        color: color-mix(in srgb, var(--primary-content), transparent 97%);
         font-size: 3rem;
         padding: 0 30px 20px 30px;
         margin: 0 0 30px 0;
@@ -133,7 +133,7 @@
       }
 
       .logo-name { /* grid-area: stack; settings */
-        z-index: 0; /* Sits on top */
+        z-index: 1; /* Sits below everything */
         margin-top: 80px; /* Adjust to "sink" it below the bird */
         /* background-color: rgba(1, 1, 1, 0.3); */
       }
@@ -162,7 +162,7 @@
         /* background: #4ecca3; // original */
         background: var(--primary);
         border-radius: 4px;
-        z-index: 2;
+        z-index: 2; /* Sits above the logo name but below the tagline */
 
         /* ---------------------------------------- */
         /* --- THE CORE WAVE LOGIC AND ANIMATION--- */
