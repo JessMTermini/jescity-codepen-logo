@@ -2,13 +2,14 @@
 <html>
 <head>
 <style>
-  :root { --bg: #0d111b; --card-bg: rgba(248, 2, 80, 0.074); }
+  :root { --bg: #0d111b; }
   body { background: var(--bg); display: flex; justify-content: center; align-items: center; height: 100vh; overflow: hidden; font-family: sans-serif; }
 
   .glow-card {
     position: relative;
     width: 400px;
     height: 250px;
+    background-color: rgba(248, 2, 80, 0.074) !important;
     background: radial-gradient(
       900px circle at var(--x) var(--y), 
       rgba(248, 2, 80, 0.239),
