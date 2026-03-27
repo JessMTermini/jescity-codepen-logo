@@ -1,0 +1,11 @@
+:root {
+  --bg: #10111b; /* old color was #0d111b; See backdrp filter causing this minor color shift on .glow-card in glass-card.html */
+}
+body {
+  background: var(--bg);
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  overflow: hidden;
+  font-family: sans-serif;
+}

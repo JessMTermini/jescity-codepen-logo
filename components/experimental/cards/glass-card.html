@@ -27,7 +27,7 @@
         );
         border-radius: 120px;
         border: 0.5px solid rgba(255, 0, 162, 0.9);
-        backdrop-filter: blur(10px);
+        backdrop-filter: blur(10px); /* This back-drop filter is cnahing the bg color from `rgb(13, 17, 27)` or  `#0d111b` to `rgb(16, 17, 27)` or `#10111b` */
         overflow: hidden;
         display: flex;
         justify-content: center;
@@ -64,36 +64,35 @@
       }
 
       .inset-text {
-          background-color: #565656; /* A background color */
-          color: transparent; /* Makes the text fill transparent */
-          text-shadow:
-            -3px -3px 0px rgba(248, 195, 2, 0.06),
-            /* Simulates a highlight from one side */ 3px 3px 0px
-              rgba(248, 2, 80, 0.118); /* Simulates a shadow from the other side */
-          -webkit-background-clip: text; /* Clips the background to the shape of the text (for webkit browsers) */
-          background-clip: text; /* Clips the background to the shape of the text */
-        }
+        background-color: #565656; /* A background color */
+        color: transparent; /* Makes the text fill transparent */
+        text-shadow:
+          -3px -3px 0px rgba(248, 195, 2, 0.06),
+          /* Simulates a highlight from one side */ 3px 3px 0px
+            rgba(248, 2, 80, 0.118); /* Simulates a shadow from the other side */
+        -webkit-background-clip: text; /* Clips the background to the shape of the text (for webkit browsers) */
+        background-clip: text; /* Clips the background to the shape of the text */
+      }
 
-        .paragraph {
-          font-size: 1rem;
-        }
-        .stretched {
-          letter-spacing: 10px;
-        }
-
+      .paragraph {
+        font-size: 1rem;
+      }
+      .stretched {
+        letter-spacing: 10px;
+      }
     </style>
   </head>
   <body>
     <div class="glow-card" id="card">
       <span class="inset-text">Creativity Unbanned </span>
     </div>
-    <br>
+    <br />
     <div class="glow-card paragraph" id="">
       <p class="inset-text">
-        Wake me up inside. <br>
-        Wake me up inside. <br> 
-        Before I come undone.<br>
-        Save me from the nothing I've become. <br>
+        Wake me up inside. <br />
+        Wake me up inside. <br />
+        Before I come undone.<br />
+        Save me from the nothing I've become. <br />
         <span class="stretched">Bring me to Life!</span>
       </p>
     </div>

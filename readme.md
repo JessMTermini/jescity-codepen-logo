@@ -39,6 +39,7 @@ Overall Project Timeline:
 ```
 
 ## Step 2: The "Global Palette" (CSS Variables)
+
 To solve the "Cookie Cutter" color problem, you don't need a framework. You need a Central Intelligence for your colors.
 
 Create a file called `theme.css`. This is where you store your "non-standard" soul. Instead of hex codes, you use names that describe the vibe.
@@ -52,4 +53,5 @@ Create a file called `theme.css`. This is where you store your "non-standard" so
   --text-vibrant: #e2e8f0;
 }
 ```
+
 **The Win:** When you move to Tailwind later, you just tell Tailwind to look at these variables. You won't have to "re-map" anything.
