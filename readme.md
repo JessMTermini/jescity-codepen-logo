@@ -25,7 +25,7 @@ Overall Project Timeline:
         card.html    <-- These html snippets encapsulate html and css on a component level
         button.html
         ....html
-        /experimental    <-- Components currently being built
+        /experimental    <-- Components currently being built or worked on
             /cards
                 glass-card.html
                 grad-glow-cards.html
