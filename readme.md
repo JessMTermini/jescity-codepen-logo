@@ -10,7 +10,7 @@ Overall Project Timeline:
 
 4. **Step 4:** Create a Main Index to layout the pieces.
 
-## Step 1: Multi-Project Structure
+## Step 1: Multi-Project Structure Set-Up
 
 ```
 /MASTER WORKBENCH (This Repo - JESCITY-CODEPEN-LOGO)
