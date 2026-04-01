@@ -1,5 +1,23 @@
 :root {
   --bg: #10111b; /* old color was #0d111b; See backdrp filter causing this minor color shift on .glow-card in glass-card.html */
+
+  /* MY CUSTOM BOOTSWATCH THEME COLORS */
+  --primary: #c4005a;
+  --primary-content: #e3cee4;
+  --secondary: #00a4f2;
+  --secondary-content: #ffffff;
+  --accent: #00b6d9;
+  --accent-content: #ffffff;
+  --neutral: #51515c;
+  --neutral-content: #cdd0d3;
+  --info: #71d1fe;
+  --info-content: #ffffff;
+  --success: #99e600;
+  --success-content: #ffffff;
+  --warning: #fdcf2b;
+  --warning-content: #ffffff;
+  --error: #f82834;
+  --error-content: #ffffff;
 }
 body {
   background: var(--bg);
