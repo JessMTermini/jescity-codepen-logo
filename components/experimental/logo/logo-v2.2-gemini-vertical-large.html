@@ -143,7 +143,7 @@
       .logo-tagline {
         /* grid-area: stack; settings */
         z-index: 3; /* Sits on top of everything */
-        margin-top: 470px; /* Adjust to "sink" it below the bird */
+        margin-top: 500px; /* Adjust to "sink" it below the bird */
       }
 
       /* ------------------------ */
@@ -154,7 +154,7 @@
         display: flex;
         gap: 6.8%;
         align-items: flex-end;
-        height: 400px;
+        height: 440px;
       }
 
       /* The Pheonix Slice Styling */
@@ -177,11 +177,11 @@
 
         /* 2. Use that distance to create staggered delays.
         Further items wait longer to start. */
-        animation-delay: calc(var(--distance) * 0.1s);
+        animation-delay: calc(var(--distance) * 100ms);
 
         /* Apply the animation */
         animation-name: wave-motion;
-        animation-duration: 1.5s;
+        animation-duration: 1.8s;
         animation-iteration-count: infinite;
         animation-timing-function: ease-in-out;
       }
@@ -199,9 +199,9 @@
           height: 100%;
           opacity: 0.5;
         }
-        50% {
+        45% {
           /* The peak of the wave */
-          height: 10px;
+          height: 15px;
           opacity: 1;
           filter: brightness(2.5);
           box-shadow: 0 0 20px var(--color);
